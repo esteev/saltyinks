@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 38bd62a5151344549a2c3822a550f1fd
+timeCreated: 1522701357
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Salty2
+  fontNames:
+  - Salty2
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 064d7dd54845f7143914c375a3a1e089, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

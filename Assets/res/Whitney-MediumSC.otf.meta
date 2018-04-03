@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: fee0c60ac1e02264893a7e250462d03d
+timeCreated: 1522702386
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Whitney SC
+  fontNames:
+  - Whitney SC
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 67bfa5467c787bd4ea8ad7ecc4eb66bb, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

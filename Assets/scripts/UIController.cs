@@ -6,13 +6,13 @@ using Facebook.Unity;
 public class UIController : MonoBehaviour {
 
     private float invokeCallRate = 0.05f;
-    private float initLoginSpeed = 150f;
+    private float initLoginSpeed = 120f;
 
     private Vector3 fp;   //First touch position
     private Vector3 lp;   //Last touch position
     private float dragDistance;  //minimum distance for a swipe to be registered
 
-    public GameObject animatables, dotdot;
+    public GameObject movers, dotdot, imagesAnimatable;
     private int animState = 1;
 
     void Start () {
@@ -87,9 +87,9 @@ public class UIController : MonoBehaviour {
 
     void getToPos()
     {
-        if (animatables.GetComponent<Transform>().localPosition != target[animState-1])
+        if (movers.GetComponent<Transform>().localPosition != target[animState-1])
         {
-            animatables.GetComponent<Transform>().localPosition = Vector3.MoveTowards(animatables.GetComponent<Transform>().localPosition, target[animState - 1], initLoginSpeed);
+            movers.GetComponent<Transform>().localPosition = Vector3.MoveTowards(movers.GetComponent<Transform>().localPosition, target[animState - 1], initLoginSpeed);
         }
         else
         {
@@ -106,13 +106,14 @@ public class UIController : MonoBehaviour {
             case 1:
                 animState = 2;
                 InvokeRepeating("getToPos", invokeCallRate, invokeCallRate);
-            //    animatables.GetComponent<Animation>().Play("12");
+                imagesAnimatable.GetComponent<Animation>().Play("img12");
                 dotdot.GetComponent<Animation>().Play("dot12");
                 break;
             case 2:
                 animState = 3;
                 InvokeRepeating("getToPos", invokeCallRate, invokeCallRate);
                 dotdot.GetComponent<Animation>().Play("dot23");
+                imagesAnimatable.GetComponent<Animation>().Play("img23");
                 break;
         }
     //    disableAnimation();
@@ -128,26 +129,16 @@ public class UIController : MonoBehaviour {
                 animState = 2;
                 InvokeRepeating("getToPos", invokeCallRate, invokeCallRate);
                 dotdot.GetComponent<Animation>().Play("dot32");
+                imagesAnimatable.GetComponent<Animation>().Play("img32");
                 break;
             case 2:
                 animState = 1;
                 InvokeRepeating("getToPos", invokeCallRate, invokeCallRate);
                 dotdot.GetComponent<Animation>().Play("dot21");
+                imagesAnimatable.GetComponent<Animation>().Play("img21");
                 break;
         }
     //    disableAnimation();
-    }
-
-    void enableAnimation()
-    {
-        animatables.GetComponent<Animation>().enabled = true;
-        dotdot.GetComponent<Animation>().enabled = true;
-    }
-
-    void disableAnimation()
-    {
-        animatables.GetComponent<Animation>().enabled = false;
-        dotdot.GetComponent<Animation>().enabled = false;
     }
 
     private void AuthCallback (ILoginResult result) {
@@ -200,5 +191,10 @@ public class UIController : MonoBehaviour {
 	{
 		
 	}
+
+    public void sideBar()
+    {
+        print("sideBar opened");
+    }
 
 }
